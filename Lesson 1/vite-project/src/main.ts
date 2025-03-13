@@ -71,7 +71,7 @@ import "./style.css";
 //         if (typeof result === "object" && result !== null) {
 //             return result;  // Type is verified as an object (non-null)
 //         }
-//     } catch (error) {
+//     } catch (error: string): never {
 //         console.error("Failed to parse JSON:", error);
 //     }
 //     return null;  // Return null if parsing fails or type is incorrect
@@ -127,10 +127,13 @@ import "./style.css";
 // lightShower('black')   // не валідне значення 
 //====================================================================
 
+//  для запитів на бекенд
+
 // function logName(name: string): string {
 //   return `${name}`;
 // }
 
+//      для он-Кліків, аддІвентЛіснер
 // function logName(name: string): void {
 //   console.log(`${name}`);
 // }
@@ -144,17 +147,17 @@ import "./style.css";
 // errorHandler("Critical error occurred!");  // Throws an Error with the provided message
 
 
-//=====   interface ===========================================
+//=====   interface  для створення класів===========================================
 
 interface User {
   name: string;
   age: number;
-  lastName?: string;
+  lastName?: string; // опціональне значення
   sayHello(): string;
   sayBye(): void;
   showAge(userAge: number): string;
 }
-
+//    type   не можна для створення класів 
 // type User = {
 //   name: string;
 //   age: number;
@@ -169,7 +172,7 @@ interface User {
 //   sayBye() {
 //     console.log("Bye");
 //   },
-//   showAge(userAge: number) {
+//   showAge(userAge: number) {    // не був підв'язаний interface User, тому пропс userAge треба типізувати
 //     return `My age is ${userAge}`;
 //   },
 // };
