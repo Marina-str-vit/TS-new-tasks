@@ -61,8 +61,9 @@ import "./style.css";
 // ];
 
 // console.log(calcTotal(users)); // Output: 100
+//==============================================================================================
 
-// unknown
+//          unknown               для отримання даних з беккенду 
 
 // function safelyParseJson(jsonString: string) {
 //     try {
@@ -75,12 +76,15 @@ import "./style.css";
 //     }
 //     return null;  // Return null if parsing fails or type is incorrect
 // }
+//==========================================================================================
 
-// any
+// any  коли швидко треба написати пробний код
 
 // function logDetails(value: any) {
 //   console.log(`Value: ${value}, Type of value: ${typeof value}`);
 // }
+
+//=========      enum       це як бібліотека сталих значень  =========================================== 
 
 // enum VehicleType {
 //     Car = "Audi",
@@ -95,17 +99,20 @@ import "./style.css";
 // // Example usage:
 // console.log(getVehicleType(VehicleType.Car));        // Output: "The vehicle type is: Audi."
 // console.log(getVehicleType(VehicleType.Motorcycle)); // Output: "The vehicle type is: Ducati."
+//============================================================================================================
 
-// Union Types
-// function formatInput(input: string | number) {
+// Union Types    для одній змінній різні типи, для Реакта буде більше стрінг(набер) або андефайнд
+
+// function formatInput(input: string | number | null) {
 //     if (typeof input === 'number') {
 //         return input.toFixed(2); // Formats the number to two decimal places
 //     } else {
 //         return input.toUpperCase(); // Converts the string to uppercase
 //     }
 // }
+//============================================================================================
 
-// Literal
+//     Literal     можна перерахувати сталі значення, всі інші будуть помилкою, напр. розміри кнопки
 
 // function lightShower(color: "green" | "yellow" | 'red') {
 //   if (color === "green") {
@@ -117,7 +124,8 @@ import "./style.css";
 //   }
 // }
 
-// lightShower('black')
+// lightShower('black')   // не валідне значення 
+//====================================================================
 
 // function logName(name: string): string {
 //   return `${name}`;
@@ -127,13 +135,16 @@ import "./style.css";
 //   console.log(`${name}`);
 // }
 
-// never
+//================ never  ===========================================================
 
 // function errorHandler(message: string): never {
 //   throw new Error(message);
 // }
 
 // errorHandler("Critical error occurred!");  // Throws an Error with the provided message
+
+
+//=====   interface ===========================================
 
 interface User {
   name: string;
