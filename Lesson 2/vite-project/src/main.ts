@@ -126,7 +126,7 @@ import "./style.css";
 // };
 
 //--------------------------------------------------------------------------
-// квадратні дужки - значить ми працюємо з ключем об'єкту props або key
+// квадратні дужки - значить працюємо з ключем об'єкту props або key
 
 // interface List {
 //   [key:string]: number | null
@@ -152,23 +152,23 @@ import "./style.css";
 //   monitors: 23,
 // };
 
-//===========  GENERIC  =============================================================
-
+//===========  GENERIC  динамічний тип даних=============================================================
+//                       очікую   отримую    повертає   опрацювали позитивний і негативний сценарій функцій
 // function getFirstElement<T>(array: T[]): T | undefined {
 //   return array[0];
 // }
 
-// numberArray
+// numberArray  тут для чисел
 // function getFirstElement<T>(array: number[]) : number {
 //   return array[0];
 // }
 
-// stringArray
+// stringArray  для рядка
 // function getFirstElement<T>(array: string[]) : string {
 //   return array[0];
 // }
 
-// objectArray
+// objectArray  для об'єкту
 // function getFirstElement<T>(array: { name: string }[]): { name: string } {
 //   return array[0];
 // }
@@ -180,7 +180,11 @@ import "./style.css";
 // console.log(getFirstElement(numberArray));
 // console.log(getFirstElement(stringArray));
 // console.log(getFirstElement(objectArray));
+//  console.log(getFirstElement(1)); -------  тут буде помилка, бо функція чекає масив!!
 
+//-----------------------------------------------------------------------------
+// отримання значення ключа динамічним
+ObjectType = Т                        наслідує ключі від Т
 // function getProperty<ObjectType, K extends keyof ObjectType>(obj: ObjectType, key: K): ObjectType[K] {
 //   return obj[key];
 // }
