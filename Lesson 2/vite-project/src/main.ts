@@ -1,19 +1,19 @@
 import "./style.css";
 
 // let name = "John";
-// A) let name: string = 'John';
+// A) let name: string = 'John'; +
 // B) let name: number = 'John';
 // C) let name: boolean = 'John';
 // D) let name = 'John';
 
 // let scores = [1, 2, 3];
-// A) let scores: number[] = [1, 2, 3];
+// A) let scores: number[] = [1, 2, 3]; +
 // B) let scores = [1, 2, 3];
 // C) let scores: array = [1, 2, 3];
 // D) let scores: [number] = [1, 2, 3];
 
 // let id;
-// A) let id: string | number;
+// A) let id: string | number; +
 // B) let id: string;
 // C) let id: number;
 // D) let id: any;
@@ -21,7 +21,7 @@ import "./style.css";
 // function calculateDistance() {
 //   return 42;
 // }
-// A) function calculateDistance(): number { return 42; }
+// A) function calculateDistance(): number { return 42; }  +
 // B) function calculateDistance(): void { return 42; }
 // C) function calculateDistance(): any { return 42; }
 // D) function calculateDistance() { return 42; }
@@ -29,14 +29,14 @@ import "./style.css";
 // function logMessage(message) {
 //   console.log(message);
 // }
-// A) function logMessage(message: string): void { console.log(message); }
+// A) function logMessage(message: string): void { console.log(message); }  +
 // B) function logMessage(message: string): string { console.log(message); }
-// C) function logMessage(message: any): void { console.log(message); }
+// C) function logMessage(message: any): void { console.log(message); }        
 // D) function logMessage(message: string) { console.log(message); }
 
 // Admin', 'User', 'Gues
 
-// a) enum UserRole {
+// a) enum UserRole {    +
 //   Admin = "Admin"
 //   User = "User"
 //   Guest = "Guest"
@@ -55,6 +55,9 @@ import "./style.css";
 // };
 
 // d) let UserRole = ['Admin', 'User', 'Guest'];
+
+//=====================================================================================
+
 
 // let name:string = 'BOB'
 
@@ -122,17 +125,20 @@ import "./style.css";
 //   swim: () => undefined,
 // };
 
+//--------------------------------------------------------------------------
+// квадратні дужки - значить ми працюємо з ключем об'єкту props або key
+
 // interface List {
 //   [key:string]: number | null
 // }
 
-// type Fruits = {
+// type Fruits = {    це не є гарне типізування !!!!
 //   apples: number;
 //   banana: number;
 //   oranges: number;
 // };
 
-// const fruits: List = {
+// const fruits: List = {  ось це правильне типізування!!
 //   apples: 10,
 //   banana: 15,
 //   oranges: 25,
@@ -140,11 +146,13 @@ import "./style.css";
 //   peach: null
 // };
 
-// const electrinic: List = {
+// const electro nic: List = {
 //   phones: 20,
 //   tablets: 10,
 //   monitors: 23,
 // };
+
+//===========  GENERIC  =============================================================
 
 // function getFirstElement<T>(array: T[]): T | undefined {
 //   return array[0];
