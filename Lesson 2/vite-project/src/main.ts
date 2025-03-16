@@ -201,7 +201,7 @@ ObjectType = Т                        наслідує ключі від Т
 // const gender = getProperty(person, "gender"); // undefined
 
 //------------------------------------------------------------------------------------------
-//==========>> 1) опис об'єкта
+//==========>> Partial - всі ключі interface робить необов'язковими
 // interface UserProfile {
 //   username: string;
 //   email: string;
@@ -265,14 +265,14 @@ ObjectType = Т                        наслідує ключі від Т
 // //   name: string;
 // //   email: string;
 // // }
-
+                                                    теж саме, що і вище
 // // function displayInfo(fullEmployeeInfo: Employee): BasicInfo {
 // //   return {
 // //     name: fullEmployeeInfo.name,
 // //     email: fullEmployeeInfo.email,
 // //   };
 // // }
-
+//===========================================================================
 // interface Employee {
 //   id: number;
 //   name: string;
@@ -288,7 +288,7 @@ ObjectType = Т                        наслідує ключі від Т
 //   department: "Engineering",
 //   hireDate: new Date("2020-01-10"),
 // };
-
+  вирізаю з Employee що саме: "hireDate" | "name". Метод Omit вирізає з інтерфейсу те, що треба
 // function displayInfo(fullEmployeeInfo: Employee): Omit<Employee, "hireDate" | "name"> {
 //   return {
 //     name: fullEmployeeInfo.name,
@@ -297,13 +297,13 @@ ObjectType = Т                        наслідує ключі від Т
 //     id: fullEmployeeInfo.id,
 //   };
 // }
-
+//=================================================================
 // interface List {
 //   [key:string]: number | null
 // }
 
-// Record<string, number>;
-
+// Record<string, number>;  для збора даних
+                                                      ключ   тип даних, що отримаю
 // function recordTemperatures(temps: number[]): Record<string, number> {
 //   let temperatureRecord: Record<string, number> = {};
 
@@ -317,10 +317,9 @@ ObjectType = Т                        наслідує ключі від Т
 // // Example usage:
 // const weeklyTemps = [22, 24, 23, 25, 24, 26, 27];
 // const tempRecord = recordTemperatures(weeklyTemps);
-// console.log(tempRecord);
+// console.log(tempRecord); //  {day1: 22, day2: 24, day3: 23, day4: 25, day5: 24, …}
 
-// [{ 'day1': 22 }, { 'day2': 24 }]
-
+//=====================================================================================
 // interface Employee {
 //   id: number;
 //   name: string;
@@ -328,16 +327,16 @@ ObjectType = Т                        наслідує ключі від Т
 //   department: string;
 //   hireDate: Date; // hide info
 // }
-
+МЕТОДи МОЖУ ВИКОРИСТ не лише в функціях, але і для типізації нових змінних, так беремо Employee і з нього вирізаємо hireDate, тепер тут буде все крім дати!!
 // type EmployeeBasicInfo = Omit<Employee, "hireDate">;
-
+//=======================================================================================
 interface User {
   id: number;
   name: string;
   email: string;
 }
 
-// async function fetchUser(): Promise<User> {
+// async function fetchUser(): Promise<User> { 
 //   try {
 //     const response = await fetch("https://api.user.com");
 //     const user = await response.json();
