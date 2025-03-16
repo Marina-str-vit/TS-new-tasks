@@ -200,6 +200,8 @@ ObjectType = Т                        наслідує ключі від Т
 // const age = getProperty(person, "age"); // Output: 30
 // const gender = getProperty(person, "gender"); // undefined
 
+//------------------------------------------------------------------------------------------
+//==========>> 1) опис об'єкта
 // interface UserProfile {
 //   username: string;
 //   email: string;
@@ -212,12 +214,13 @@ ObjectType = Т                        наслідує ключі від Т
 //   age: 28,
 // };
 
+// функ. приймає старі дані profile і нові оновлення updates; Partial<UserProfile> - будь які ключі з цього типу
 // function updateProfile(profile: UserProfile, updates: Partial<UserProfile>) {
 //   return { ...profile, ...updates };
 // }
 
 // const updatedProfile = updateProfile(originalProfile, { age: 29 });
-
+//====================================================================================
 // interface User {
 //   id: number;
 //   name: string;
@@ -228,10 +231,10 @@ ObjectType = Т                        наслідує ключі від Т
 //   name: "Bob",
 // };
 
-// user.id = 201;
-// user.name = "John";
-
-// Pick <T, K>
+// user.id = 201;  буде помилка
+// user.name = "John"; буде помилка
+//=====================================================================
+// Pick <T, K>  приймає будь скільки аргументів, показує вибіркові поля початкового об'єкту 
 
 // interface Employee {
 //   id: number;
@@ -248,14 +251,16 @@ ObjectType = Т                        наслідує ключі від Т
 //   department: "Engineering",
 //   hireDate: new Date("2020-01-10"),
 // };
-
+//                                     повертає - показує дані працівника: 1аргум.- інтерфейс, 2-що саме хочемо побачити.
 // function displayInfo(fullEmployeeInfo: Employee): Pick<Employee, "name" | "email"> {
 //   return {
 //     name: fullEmployeeInfo.name,
 //     email: fullEmployeeInfo.email,
 //   };
-// }
+// }    створюється новий інтерфейс!!!
 
+
+// АЛЕ МОЖНА створити новий interface і тоді в функцію підставити замість Pick лише назву нового інтерфейсу BasicInfo 
 // // interface BasicInfo {
 // //   name: string;
 // //   email: string;
