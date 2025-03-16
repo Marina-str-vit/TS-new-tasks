@@ -297,7 +297,7 @@ ObjectType = Т                        наслідує ключі від Т
 //     id: fullEmployeeInfo.id,
 //   };
 // }
-//=================================================================
+//========================      RECORD    ================================
 // interface List {
 //   [key:string]: number | null
 // }
@@ -318,6 +318,51 @@ ObjectType = Т                        наслідує ключі від Т
 // const weeklyTemps = [22, 24, 23, 25, 24, 26, 27];
 // const tempRecord = recordTemperatures(weeklyTemps);
 // console.log(tempRecord); //  {day1: 22, day2: 24, day3: 23, day4: 25, day5: 24, …}
+
+        ---- 2 приклад ------
+type Weekdays = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri';
+type Weekend = 'Sat' | 'Sun';
+
+type Day = Weekdays | Weekend;
+
+type DayTranslations = Record<Day, string>;
+
+const translations: DayTranslations = {
+  Mon: 'Понеділок',
+  Tue: 'Вівторок',
+  Wed: 'Середа',
+  Thu: 'Четверг',
+  Fri: "П'ятниця",
+  Sat: 'Субота',
+  Sun: 'Неділя',
+};
+
+    ----- 3 приклад з enum ---------
+enum UserRoles {
+  admin = 'admin',
+  manager = 'manager',
+  employee = 'manager',
+}
+
+type UserRolesStatuses = Record<UserRoles, boolean>;
+
+const userRoleStatuses: UserRolesStatuses = {
+  [UserRoles.admin]: true,
+  [UserRoles.manager]: false,
+  [UserRoles.employee]: true,
+};
+
+    -------4 приклад розширяю type можливими помилками ----
+type InitialFormType = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+export type Form = InitialFormType & {
+  errors: Partial<Record<keyof InitialFormType, [string]>>;
+};
+
 
 //=====================================================================================
 // interface Employee {
